@@ -1,11 +1,12 @@
-from ash_esi_lib import request_data
+from esi_lib import request_data
+import os
 
 # flags
 UPDATE_REGIONS = True
 UPDATE_CONSTELLATIONS = False
 UPDATE_SYSTEMS = False
 
-output_location = "csv/geography/"
+output_location = os.path.dirname(__file__) + "/csv/geography/"
 
 print("hello captain :)")
 
