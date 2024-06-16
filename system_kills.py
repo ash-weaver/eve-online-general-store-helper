@@ -1,4 +1,4 @@
-from ash_esi_lib import request_data
+from esi_lib import request_data
 import datetime
 import os
 
@@ -7,7 +7,7 @@ REQUEST_UPDATES = True
 
 max_files_saved = 7*24 # keep 1 week of stats (assuming hourly pulls)
 
-file_location = "csv/system_kills/"
+file_location = os.path.dirname(__file__) + "/csv/system_kills/"
 file_name = datetime.datetime.now().strftime(
     "%Y"+"-"+"%m"+"-"+"%d"+"-"+"%H"+":"+"%M"+":"+"%S")
 
@@ -19,6 +19,9 @@ if REQUEST_UPDATES:
         # int ship_kills
         # int system_id
     report = request_data("/universe/system_kills/")
+
+    if not os.path.exists(file_location):
+        os.mkdir(file_location)
 
     file = open(file_location + file_name + ".csv", "w")
     file.write("system_id,ship_kills,pod_kills,npc_kills\n")
