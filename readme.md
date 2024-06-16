@@ -20,9 +20,7 @@ Cost analysis of buying loot locally and selling it in major market hubs.
 
 ## Implementation Details
 ### EVE ESI
-Using python, the GSH will poll the [EVE ESI](https://esi.evetech.net/ui/) for data. Some data, like geographic information will need to be checked infrequently, while other information will be getting polled often, such as player activity statistics (hourly) or market data (daily).
-
-The data is returned as JSON objects that will be converted and stored as csv files to aid with postgresql integration.
+Using python, the GSH polls the [EVE ESI](https://esi.evetech.net/ui/) for data. Some data, like geographic information needs to be checked infrequently, while other information is checked regularly, such as player activity statistics (hourly) or market data (daily).
 
 | Request                  | Frequency |
 | ------------------------ | --------- |
@@ -30,6 +28,8 @@ The data is returned as JSON objects that will be converted and stored as csv fi
 | /universe/regions/       | once      |
 | /universe/constellations | once      |
 | /universe/systems        | once      |
+
+The data is returned as JSON objects that are converted and stored as csv files to aid with postgresql integration.
 
 ### Number Crunching
 The second part of the GSH is using a postgresql database to store and crunch the numbers.
@@ -39,4 +39,4 @@ TBD
 
 ## Setup
 ### Crontab
-I am running the regular data pulls from my webserver using cron. For example, the system-kills.py request has the following in the crontab file: `30 * * * * python3 /home/ash/general-store-helper/system_kills.py`. See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information on using cron.
+I am running the regular data pulls from my webserver using cron. For example, the system-kills.py request has the following in the crontab file: `30 * * * * python3 /home/ash/eve-online-general-store-helper/system_kills.py`. See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information on using cron.
