@@ -29,3 +29,7 @@ The second part of the GSH is using a postgresql database to store and crunch th
 
 ## Website Display
 TBD
+
+# Setup
+## Crontab
+I am running the regular data pulls from my webserver using cron. For example, the /universe/system-kills/ job has the following in the crontab file: '30 * * * * p ~/general-store-helper/system_kills.py'. See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information.
