@@ -1,4 +1,4 @@
-system_id,name,security_status,constellation_id,
+id,name,security_status,constellation_id,
 30000001,'Tanoo','0.8583240509033203',20000001,
 30000002,'Lashesih','0.7516891360282898',20000001,
 30000003,'Akpivem','0.8462923765182495',20000001,

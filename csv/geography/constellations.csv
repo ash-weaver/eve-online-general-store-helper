@@ -1,4 +1,4 @@
-constellation_id,name,region_id,
+id,name,region_id,
 20000001,'San Matar',10000001,
 20000002,'Anares',10000001,
 20000003,'Mamouna',10000001,
