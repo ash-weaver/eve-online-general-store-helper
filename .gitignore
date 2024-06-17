@@ -1,2 +1,3 @@
 /__pycache__
-/csv/system_kills/2*
+/csv/system_kills/*
+/csv/system_jumps/*
