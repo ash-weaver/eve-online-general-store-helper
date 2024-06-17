@@ -49,3 +49,8 @@ See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for m
 I'm using [postgresql](https://www.postgresql.org/) as the database for this project.
 
 The geography db tables are set up with `psql -d <db name> -f geography_setup.psql` command from project root.
+
+## Context
+Eve online is an online spaceships game. All players are moving around and fighting and scheming in a shared universe. Eve online is different than most games in that basically every item (ships, guns, bullets, boxes, drugs, starbases) is manufactured by players from raw materials collected by other players. It is somewhat laborious to travel long distances and moving large volumes of items is a specialized skill, so several large marketplaces have developed over time. These markets are very competitive with high volume and low margins for merchants.
+
+This tool is designed to find where players are doing activities far from the major marketplaces, so that I can sell them bullets and ships right on location (at a markup). 
