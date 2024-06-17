@@ -46,4 +46,6 @@ I am running the regular data pulls from my webserver using cron. Add the follow
 See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information.
 
 ### PostgreSQL
-After [postgresql](https://www.postgresql.org/) installation, the geography db tables are set up with `psql -d gshdb -f geography_setup.psql`.
+I'm using [postgresql](https://www.postgresql.org/) as the database for this project.
+
+The geography db tables are set up with `psql -d <db name> -f geography_setup.psql` command from project root.

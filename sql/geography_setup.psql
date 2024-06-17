@@ -1,4 +1,4 @@
-\i geography.sql;
-\copy regions(id, name) from ../csv/geography/regions.csv header csv;
-\copy constellations(id, name, region_id) from ../csv/geography/constellations.csv header csv;
-\copy systems(id, name, security_status, constellation_id) from ../csv/geography/systems.csv header csv;
+\i sql/geography.sql;
+\copy regions(id, name) from csv/geography/regions.csv header csv;
+\copy constellations(id, name, region_id) from csv/geography/constellations.csv header csv;
+\copy systems(id, name, security_status, constellation_id) from csv/geography/systems.csv header csv;
