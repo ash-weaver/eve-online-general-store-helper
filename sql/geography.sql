@@ -14,12 +14,8 @@ create table constellations (
 );
 
 create table systems (
-           system_id int,
+                  id int,
                 name varchar(50),
-     security_status float(23),
+     security_status numeric,
     constellation_id int
 );
-
--- copy regions(id, name)
--- from ../csv/geography/regions.csv
--- header csv;
