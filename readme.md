@@ -39,9 +39,9 @@ TBD
 
 ## Setup
 ### Crontab
-I am running the regular data pulls from my webserver using cron. Add the following to the crontab:
+My webserver is running the regular data pulls using cron. Add the following to the crontab:
 
-`30 * * * * python3 /home/ash/eve-online-general-store-helper/system_kills.py`. 
+`30 * * * * python3 /home/ash/eve-online-general-store-helper/hourly_requests.py`. 
 
 See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information.
 
