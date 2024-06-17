@@ -39,4 +39,11 @@ TBD
 
 ## Setup
 ### Crontab
-I am running the regular data pulls from my webserver using cron. For example, the system-kills.py request has the following in the crontab file: `30 * * * * python3 /home/ash/eve-online-general-store-helper/system_kills.py`. See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information on using cron.
+I am running the regular data pulls from my webserver using cron. Add the following to the crontab:
+
+`30 * * * * python3 /home/ash/eve-online-general-store-helper/system_kills.py`. 
+
+See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for more information.
+
+### PostgreSQL
+After [postgresql](https://www.postgresql.org/) installation, the geography db tables are set up with `psql -d gshdb -f geography_setup.psql`.
