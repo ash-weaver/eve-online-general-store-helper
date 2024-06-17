@@ -41,7 +41,7 @@ if UPDATE_CONSTELLATIONS:
         file_constellations.write(
             str(constellation["id"]) + "," +
             "'" + constellation["name"] + "'" + "," +
-            str(constellation["region_id"]) + "," +
+            str(constellation["region_id"]) +
             "\n")
     file_constellations.close()
 
@@ -68,8 +68,8 @@ if UPDATE_SYSTEMS:
         file_systems.write(
             str(system["system_id"]) + "," +
             "'" + system["name"] + "'" + "," +
-            "'" + str(system["security_status"]) + "'" + "," +
-            str(system["constellation_id"]) + "," +
+            str(system["security_status"]) + "," +
+            str(system["constellation_id"]) +
             "\n")
     file_systems.close()
 
