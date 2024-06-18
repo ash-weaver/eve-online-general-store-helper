@@ -8,10 +8,15 @@ REQUEST_JUMPS = True # /universe/system_jumps/
 
 max_files_saved = 7*24 # keep 1 week of stats
 
+def get_date():
+    return datetime.datetime.now().date().isoformat()
+
+def get_time():
+    return datetime.datetime.now().time().replace(microsecond=0).isoformat()
+
 kill_folder_location = os.path.dirname(__file__) + "/csv/system_kills/"
 jump_folder_location = os.path.dirname(__file__) + "/csv/system_jumps/"
-file_name = datetime.datetime.now().strftime(
-    "%Y"+"-"+"%m"+"-"+"%d"+"_"+"%H"+":"+"%M"+":"+"%S")
+file_name = get_date() + "_" + get_time()
 
 if REQUEST_KILLS:
     # /universe/system_kills/
@@ -26,9 +31,11 @@ if REQUEST_KILLS:
         os.mkdir(kill_folder_location)
 
     file = open(kill_folder_location + file_name + ".csv", "w")
-    file.write("system_id,ship_kills,pod_kills,npc_kills\n")
+    file.write("date,time,system_id,ship_kills,pod_kills,npc_kills\n")
     for item in report:
         file.write(
+            get_date()+","+
+            get_time()+","+
             str(item["system_id"])+","+
             str(item["ship_kills"])+","+
             str(item["pod_kills"])+","+
@@ -53,9 +60,11 @@ if REQUEST_JUMPS:
         os.mkdir(jump_folder_location)
 
     file = open(jump_folder_location + file_name + ".csv", "w")
-    file.write("system_id,ship_jumps\n")
+    file.write("date,time,system_id,ship_jumps\n")
     for item in report:
         file.write(
+            get_date()+","+
+            get_time()+","+
             str(item["system_id"])+","+
             str(item["ship_jumps"])+
             "\n")
