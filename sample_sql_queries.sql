@@ -26,3 +26,18 @@ join systems on constellations.id = systems.constellation_id
 group by regions.name
 having avg(systems.security_status) > -0.5
 order by avg_system_security desc;
+
+-- system jumps
+select system_id, systems.name, sum(ship_jumps) 
+from system_jumps 
+join systems on systems.id = system_jumps.system_id 
+group by system_id, systems.name 
+order by sum desc;
+
+-- jita traffic by hour
+select date, time, sum(ship_jumps) as jumps
+from system_jumps
+join systems on systems.id = system_jumps.system_id 
+where systems.name = 'Jita'
+group by systems.id,date,time;
+
