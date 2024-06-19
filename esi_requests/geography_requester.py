@@ -1,4 +1,4 @@
-from esi_lib import request_data
+from .esi_lib import request_data
 import os
 
 # flags
