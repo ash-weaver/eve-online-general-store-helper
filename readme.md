@@ -55,7 +55,7 @@ See [this tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) for m
 ### PostgreSQL
 I'm using [postgresql](https://www.postgresql.org/) as the database for this project.
 
-The geography db tables are set up with `psql -d <db name> -f db_operations/geography_setup.psql` command from project root.
+The db tables are set up with the python files `db_operations/geography_setup.py` and `db_operations/hourlies_setup.py`
 
 ## Background Context<a name="context"></a>
 [Eve Online](https://www.eveonline.com/) is a computer spaceships game where all players are in a shared gamespace. Characters specialise into different playstyles, such doing quests fighting npc ships, large scale turf wars, hauling cargo, exploring space dungeons, piracy against other players, mining asteroids, and many others.
