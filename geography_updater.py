@@ -23,7 +23,7 @@ if UPDATE_REGIONS:
         region = request_data("/universe/regions/" + str(id) + "/")
         file_regions.write(
             str(region["region_id"]) + "," +
-            "'" + region["name"] + "'"
+            region["name"]
             + "\n")
     file_regions.close()
 
@@ -40,7 +40,7 @@ if UPDATE_CONSTELLATIONS:
         constellation = request_data("/universe/constellations/" + str(id) + "/")
         file_constellations.write(
             str(constellation["id"]) + "," +
-            "'" + constellation["name"] + "'" + "," +
+            constellation["name"] + "," +
             str(constellation["region_id"]) +
             "\n")
     file_constellations.close()
@@ -67,7 +67,7 @@ if UPDATE_SYSTEMS:
         system = request_data("/universe/systems/" + str(id) + "/")
         file_systems.write(
             str(system["system_id"]) + "," +
-            "'" + system["name"] + "'" + "," +
+            system["name"] + "," +
             str(system["security_status"]) + "," +
             str(system["constellation_id"]) +
             "\n")
