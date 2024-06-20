@@ -1,29 +1,26 @@
 -- show all systems, organized by constellation and region
-select regions.name as regions, 
-constellations.name as constellations,
-systems.name as systems
-from regions 
-join constellations on regions.id = constellations.region_id 
-join systems on constellations.id = systems.constellation_id;
+select region_name as region, 
+constellation_name as constellation, 
+system_name as system
+from geography
+order by region_name;
 
 -- average system security by region
-select regions.name as region, 
+select region_name as region, 
 count(systems) as system_count, 
 round(avg(systems.security_status),2) as avg_system_security
-from regions
-join constellations on regions.id = constellations.region_id 
-join systems on constellations.id = systems.constellation_id
-group by regions.name
+from geography
+join systems on systems.id = geography.system_id
+group by region_name
 order by avg_system_security desc;
 
 -- average system security by region but with the completely lawless regions removed (i will get killed by roving enforcers)
-select regions.name as region, 
+select region_name as region, 
 count(systems) as system_count, 
 round(avg(systems.security_status),2) as avg_system_security
-from regions
-join constellations on regions.id = constellations.region_id 
-join systems on constellations.id = systems.constellation_id
-group by regions.name
+from geography
+join systems on systems.id = geography.system_id
+group by region_name
 having avg(systems.security_status) > -0.5
 order by avg_system_security desc;
 
@@ -59,12 +56,11 @@ where systems.name = 'Jita'
 order by date,time;
 
 -- average npc kills by region (per hour)
-select regions.name, 
+select region_name, 
 trunc(avg(npc_kills),2) as npc_kills, 
 round(avg(systems.security_status),2) as avg_system_security
 from system_kills
+join geography on geography.system_id = system_kills.system_id
 join systems on systems.id = system_kills.system_id
-join constellations on constellations.id = systems.constellation_id
-join regions on regions.id = constellations.region_id
-group by regions.name
+group by region_name
 order by npc_kills desc;
