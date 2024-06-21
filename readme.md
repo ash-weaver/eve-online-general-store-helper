@@ -69,3 +69,7 @@ Outside of these large markets, item availablity is wildly inconsistent. Basic i
 This tool is an application to identify where and what player activity is happening away from the large market hubs in an effort to set up small markets that sell those players missiles (and drones, repair paste, boxes, etc). See [implementation details](#implementation) for the specific technologies I'm using to collect, sort, and display the data.
 
 The developers of the game have made a ton of real-time game data available through through their swagger api. This includes generalized data like how many players were killed in each solar system in the last hour, to extremely specific data like how much a specific missile costs at a specific space station at any time. Beyond that, they provide an sso system where applications can ask players to log in for character specific data, like what items they have for sale at which stations or read mail from their evemail inbox.
+
+And why? 
+
+Ever since I was born it's been my dream to be petite bourgeoisie.
