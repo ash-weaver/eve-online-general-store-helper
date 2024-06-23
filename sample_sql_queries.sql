@@ -39,10 +39,10 @@ where systems.name = 'Jita'
 group by systems.id,date,time;
 
 -- most kills in all systems over full period
-select systems.name, sum(ship_kills) as ship_kills, sum(pod_kills) as pods 
+select system_name, sum(ship_kills) as ship_kills, sum(pod_kills) as pods 
 from system_kills
-join systems on systems.id = system_kills.system_id
-group by systems.name
+join geography on geography.system_id = system_kills.system_id
+group by system_name
 order by ship_kills desc;
 
 -- all kills in jita by hour with pod percentage
@@ -64,3 +64,23 @@ join geography on geography.system_id = system_kills.system_id
 join systems on systems.id = system_kills.system_id
 group by region_name
 order by npc_kills desc;
+
+
+-- "system activity" metric
+-- show average each of jumps npc_kills, ship_kills, pod_kills by system with security
+-- then do some crunching
+-- a metric i've put together because it "sounds good"
+select 
+region_name,
+trunc(avg(security_status), 1) as security_status,
+trunc(avg(ship_jumps + npc_kills + ship_kills * 100 + pod_kills * 100)) as activity,
+trunc(avg(ship_jumps),2) as ship_jumps,
+trunc(avg(npc_kills),2) as npc_kills,
+trunc(avg(ship_kills),2) as ship_kills,
+trunc(avg(pod_kills),2) as pod_kills
+from geography
+join systems on geography.system_id = systems.id
+join system_jumps on geography.system_id = system_jumps.system_id
+join system_kills on geography.system_id = system_kills.system_id
+group by region_name
+order by activity desc;
