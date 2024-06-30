@@ -14,8 +14,8 @@ def get_date():
 def get_time():
     return datetime.datetime.now().time().replace(microsecond=0).isoformat()
 
-kill_folder_location = os.path.dirname(__file__) +  "csv/system_kills/"
-jump_folder_location = os.path.dirname(__file__) +  "csv/system_jumps/"
+kill_folder_location = os.path.dirname(__file__) +  "/csv/system_kills/"
+jump_folder_location = os.path.dirname(__file__) +  "/csv/system_jumps/"
 file_name = get_date() + "_" + get_time()
 
 if REQUEST_KILLS:
