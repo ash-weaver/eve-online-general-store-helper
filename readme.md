@@ -24,7 +24,7 @@ The second part of the GSH is using a postgresql database to store and crunch th
 The file `sample_sql_queries.sql` has sample sql queries as a demonstration that the database is working. 
 
 ### Website Display
-TBD
+Website art mockups made with [REXpaint](https://www.gridsagegames.com/rexpaint/)!
 
 ## Setup<a name="setup"></a>
 ### Crontab
