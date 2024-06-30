@@ -45,6 +45,11 @@ The file `sample_sql_queries.sql` has sample sql queries as a demonstration that
 TBD
 
 ## Setup<a name="setup"></a>
+### Character Auth
+Rename `character_auth_example` to `character_auth`. Fill out the relevant info and authorize permissions on ESI.
+
+Use evewho.com to find your character id.
+
 ### Crontab
 My webserver is running the regular data pulls using cron. Add the following to the crontab:
 

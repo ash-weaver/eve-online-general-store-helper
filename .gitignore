@@ -2,3 +2,4 @@
 /esi_requests/__pycache__
 /csv/system_kills/*
 /csv/system_jumps/*
+character_auth.py
